@@ -1,3 +1,4 @@
+# NOTE: requires update to xine 1.0b API
 Summary:	DVD input plugin for Xine
 Summary(pl):	Plugin odczytu DVD dla Xine
 Name:		xine-dmd-plugin
@@ -15,8 +16,7 @@ BuildRequires:	xine-lib-devel >= 0.9.13
 %requires_eq	xine-lib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_pluginsdir	%{_libdir}/xine/plugins
+%define		_pluginsdir	%(xine-config --plugindir)
 
 %description
 The name of this plugin is dmd (digital movie disc). With this plugin,
@@ -38,13 +38,13 @@ rm -f missing
 %{__automake}
 %configure
 %{__make}
-%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	XINE_PLUGINDIR=%{_pluginsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README AUTHORS ChangeLog
-%attr(755,root,root) %{_pluginsdir}/*
+%attr(755,root,root) %{_pluginsdir}/*.so
