@@ -1,0 +1,14 @@
+diff -uNr xine_dmd_plugin-1.0.2.orig/input_dvd.c xine_dmd_plugin-1.0.2/input_dvd.c
+--- xine_dmd_plugin-1.0.2.orig/input_dvd.c	Tue Dec 18 20:38:11 2001
++++ xine_dmd_plugin-1.0.2/input_dvd.c	Sat Aug 10 22:25:22 2002
+@@ -1634,7 +1634,9 @@
+   dvd_input_plugin_t *this;
+ 
+   switch (iface) {
+-  case 5: {
++  case 5:
++  case 6:
++  case 7: {
+ 
+     int i;
+     char *s;
