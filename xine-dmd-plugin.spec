@@ -11,9 +11,8 @@ URL:		http://www.geocities.com/xinedvdplugin/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
-BuildRequires:  xine-lib-devel >= 0.9.13
-Conflicts:      xine-lib <= 0.9.12
-Requires:       xine-ui >= 0.9.13
+BuildRequires:	xine-lib-devel >= 0.9.13
+%requires_eq	xine-lib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
