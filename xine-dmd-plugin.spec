@@ -5,8 +5,6 @@ Version:	1.0.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Group(de):	X11/Applikationen/Multimedia
-Group(pl):	X11/Aplikacje/Multimedia
 Source0:	http://www.geocities.com/xinedvdplugin/xine_dmd_plugin_%{version}.tgz
 URL:		http://www.geocities.com/xinedvdplugin/
 BuildRequires:	xine-lib-devel >= 0.9.3
