@@ -32,7 +32,7 @@ ogl±daæ wszystko to, co mo¿na ogl±daæ na DVD.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
