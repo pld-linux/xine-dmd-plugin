@@ -28,7 +28,6 @@ ogl±daæ wszystko to, co mo¿na ogl±daæ na DVD.
 
 %prep
 %setup -qn %(echo %{name} | sed s/-/_/g)-%{version}
-%patch0 -p1
 
 %build
 rm -f missing
