@@ -6,9 +6,7 @@ diff -uNr xine_dmd_plugin-1.0.2.orig/input_dvd.c xine_dmd_plugin-1.0.2/input_dvd
  
    switch (iface) {
 -  case 5: {
-+  case 5:
-+  case 6:
-+  case 7: {
++  case INPUT_PLUGIN_IFACE_VERSION: {
  
      int i;
      char *s;
