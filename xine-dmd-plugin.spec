@@ -1,19 +1,17 @@
 Summary:	DVD input plugin for Xine
 Summary(pl):	Plugin odczytu DVD dla Xine
 Name:		xine-dmd-plugin
-Version:	1.0.6
+Version:	1.0.7
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://www.geocities.com/xinedvdplugin/%(echo %{name} | sed s/-/_/g)-%{version}.tar.gz
-Patch0:		xine_dmd_plugin-configure.patch
 URL:		http://www.geocities.com/xinedvdplugin/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
-BuildRequires:  xine-lib-devel >= 0.9.10
-Conflicts:      xine-lib > 0.9.12
-Requires:       xine-ui >= 0.9.10
+BuildRequires:	xine-lib-devel >= 0.9.13
+%requires_eq	xine-lib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -30,7 +28,6 @@ ogl±daæ wszystko to, co mo¿na ogl±daæ na DVD.
 
 %prep
 %setup -qn %(echo %{name} | sed s/-/_/g)-%{version}
-%patch0 -p1
 
 %build
 rm -f missing
