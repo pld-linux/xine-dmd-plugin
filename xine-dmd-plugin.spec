@@ -5,7 +5,7 @@ Version:	1.0.7
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://www.geocities.com/xinedvdplugin/%(echo %{name} | sed s/-/_/g)-%{version}.tar.gz
+Source0:	http://www.geocities.com/xinedvdplugin/%(echo %{name} | tr - _)-%{version}.tar.gz
 # Source0-md5:	ddf5803249e30d16a8e77154bec93ae9
 URL:		http://www.geocities.com/xinedvdplugin/
 BuildRequires:	automake
