@@ -1,15 +1,19 @@
 Summary:	DVD input plugin for Xine
 Summary(pl):	Plugin odczytu DVD dla Xine
 Name:		xine-dmd-plugin
-Version:	1.0.2
-Release:	3
+Version:	1.0.6
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://www.geocities.com/xinedvdplugin/xine_dmd_plugin_%{version}.tgz
-Patch0:		xine_dmd_plugin-version.patch
+Source0:	http://www.geocities.com/xinedvdplugin/%(echo %{name} | sed s/-/_/g)-%{version}.tar.gz
+Patch0:		xine_dmd_plugin-configure.patch
 URL:		http://www.geocities.com/xinedvdplugin/
-BuildRequires:	xine-lib-devel >= 0.9.3
-Requires:	xine-ui
+BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	libtool
+BuildRequires:  xine-lib-devel >= 0.9.10
+Conflicts:      xine-lib > 0.9.12
+Requires:       xine-ui >= 0.9.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -25,11 +29,17 @@ Nazwa tej wtyczki to dmd (digital movie disc). Ta wtyczka pozwala
 ogl±daæ wszystko to, co mo¿na ogl±daæ na DVD.
 
 %prep
-%setup -qn xine_dmd_plugin-%{version}
+%setup -qn %(echo %{name} | sed s/-/_/g)-%{version}
 %patch0 -p1
 
 %build
-%configure2_13
+rm -f missing
+%{__libtoolize}
+aclocal
+%{__autoconf}
+%{__automake}
+%configure
+%{__make}
 %{__make}
 
 %install
