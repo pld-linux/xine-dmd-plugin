@@ -6,7 +6,6 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://www.geocities.com/xinedvdplugin/%(echo %{name} | sed s/-/_/g)-%{version}.tar.gz
-Patch0:		xine_dmd_plugin-configure.patch
 URL:		http://www.geocities.com/xinedvdplugin/
 BuildRequires:	automake
 BuildRequires:	autoconf
