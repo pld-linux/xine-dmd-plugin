@@ -1,6 +1,6 @@
 # NOTE: requires update to xine 1.0b API
 Summary:	DVD input plugin for Xine
-Summary(pl.UTF-8):   Plugin odczytu DVD dla Xine
+Summary(pl.UTF-8):	Plugin odczytu DVD dla Xine
 Name:		xine-dmd-plugin
 Version:	1.0.7
 Release:	1
