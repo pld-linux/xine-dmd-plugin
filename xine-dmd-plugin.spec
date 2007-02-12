@@ -1,6 +1,6 @@
 # NOTE: requires update to xine 1.0b API
 Summary:	DVD input plugin for Xine
-Summary(pl):	Plugin odczytu DVD dla Xine
+Summary(pl.UTF-8):   Plugin odczytu DVD dla Xine
 Name:		xine-dmd-plugin
 Version:	1.0.7
 Release:	1
@@ -23,9 +23,9 @@ The name of this plugin is dmd (digital movie disc). With this plugin,
 you will be able to watch all what is possible to watch on a DVD. An
 other interesting feature is that you can watch multiangle DVD.
 
-%description -l pl
+%description -l pl.UTF-8
 Nazwa tej wtyczki to dmd (digital movie disc). Ta wtyczka pozwala
-ogl±daæ wszystko to, co mo¿na ogl±daæ na DVD.
+oglÄ…daÄ‡ wszystko to, co moÅ¼na oglÄ…daÄ‡ na DVD.
 
 %prep
 %setup -qn %(echo %{name} | sed s/-/_/g)-%{version}
